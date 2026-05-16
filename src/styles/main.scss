@@ -65,13 +65,6 @@
   background-image: url('Icon-Burger-menu.png');
 }
 
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 28px 20px;
-}
-
 .top-bar__icons {
   display: flex;
   gap: 24px;
@@ -405,18 +398,6 @@
   padding: 15px;
 }
 
-@mixin on-tablet {
-  @media (min-width: $tablet-min-width) {
-    padding: 40px 76px;
-  }
-}
-
-@mixin on-tablet {
-  @media (min-width: $desktop-min-width) {
-    padding: 36px 120px;
-  }
-}
-
 $tablet-min-width: 488px;
 $large-tablet-min-width: 768px;
 $desktop-min-width: 1024px;
@@ -436,5 +417,19 @@ $desktop-min-width: 1024px;
 @mixin on-desktop {
   @media (min-width: $desktop-min-width) {
     @content;
+  }
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 20px;
+
+  @include on-large-tablet {
+    padding: 40px 76px;
+  }
+  @include on-desktop {
+    padding: 36px 120px;
   }
 }
