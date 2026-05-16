@@ -34,7 +34,7 @@
 .header {
   box-sizing: border-box;
   height: 100vh;
-  background-image: url('header-bg-mobile.png.png');
+  background-image: url('./images/header-bg-mobile.png.png');
   background-size: cover;
   background-position: center;
 
@@ -62,7 +62,7 @@
 }
 
 .icon--menu {
-  background-image: url('Icon-Burger-menu.png');
+  background-image: url('./images/Icon-Burger-menu.png');
 }
 
 .top-bar__icons {
@@ -96,6 +96,7 @@
   &:last-of-type {
     padding: 0 120px;
   }
+
   max-width: 1260px;
   margin: auto;
 }
@@ -202,15 +203,6 @@
   padding: 0 15px;
   display: flex;
   flex-direction: column;
-}
-
-.store__list {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 30px;
-  max-width: 1020px;
-  width: 100%;
-  margin: 50px auto;
 }
 
 .store__image {
@@ -380,12 +372,12 @@
 }
 
 .icon--close {
-  background-image: url('Icon-Close.svg');
+  background-image: url('./images/Icon-Close.svg');
   background-size: cover;
 }
 
 .icon--phone {
-  background-image: url('Phone-number.png');
+  background-image: url('./images/Phone-number.png');
 }
 
 .scrollTop {
@@ -407,9 +399,9 @@
   padding: 15px;
 }
 
-$tablet-min-width: 488px;
-$large-tablet-min-width: 768px;
-$desktop-min-width: 1024px;
+$tablet-min-width: 320px;
+$large-tablet-min-width: 744px;
+$desktop-min-width: 1260px;
 
 @mixin on-tablet {
   @media (min-width: $tablet-min-width) {
@@ -441,5 +433,24 @@ $desktop-min-width: 1024px;
 
   @include on-desktop {
     padding: 36px 120px;
+  }
+}
+
+.store__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1020px;
+  width: 100%;
+  margin: 50px auto;
+
+  @include on-large-tablet {
+    max-width: 744px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include on-desktop() {
+    max-width: 1024px;
+    grid-template-columns: repeat(12, 1fr);
   }
 }
