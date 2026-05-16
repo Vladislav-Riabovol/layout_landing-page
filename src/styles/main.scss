@@ -219,14 +219,6 @@
   flex-direction: column;
 }
 
-.store__image-wide {
-  grid-column: span 8;
-}
-
-.store__image-square {
-  grid-column: span 4;
-}
-
 .store__button {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
@@ -430,7 +422,6 @@ $desktop-min-width: 1260px;
 }
 
 .store__list {
-  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   max-width: 1020px;
@@ -450,15 +441,38 @@ $desktop-min-width: 1260px;
 
 .store__images {
   display: grid;
+  gap: 24px;
   grid-template-columns: repeat(2, 1fr);
 
   @include on-large-tablet {
-    max-width: 744px;
     grid-template-columns: repeat(6, 1fr);
   }
 
   @include on-desktop {
-    max-width: 1260px;
     grid-template-columns: repeat(12, 1fr);
+  }
+
+  &--wide {
+    grid-column: span 1;
+
+    @include on-large-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 8;
+    }
+  }
+
+  &--square {
+    grid-column: span 1;
+
+    @include on-large-tablet {
+      grid-column: span 2;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
   }
 }
