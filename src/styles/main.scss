@@ -87,8 +87,17 @@
   margin-bottom: 32px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .menu__content {
   position: relative;
+  &:last-of-type {
+    padding: 0 120px;
+  }
+  max-width: 1260px;
+  margin: auto;
 }
 
 .menu__nav {
@@ -429,6 +438,7 @@ $desktop-min-width: 1024px;
   @include on-large-tablet {
     padding: 40px 76px;
   }
+
   @include on-desktop {
     padding: 36px 120px;
   }

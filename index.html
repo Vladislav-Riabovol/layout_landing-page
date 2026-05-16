@@ -379,7 +379,10 @@
         <div class="login__container">
           <h2 class="login__title">Contact us</h2>
 
-          <form class="login__form">
+          <form
+            class="login__form"
+            onsubmit="this.reset(); return false;"
+          >
             <input
               class="login__text"
               type="text"
