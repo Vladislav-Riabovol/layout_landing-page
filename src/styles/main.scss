@@ -440,6 +440,9 @@ $desktop-min-width: 1260px;
 }
 
 .store__images {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(2, 1fr);
